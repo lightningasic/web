@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">BitExchange Hardware Wallet 2014 - LIGHTNINGASIC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .product-detail-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      background: radial-gradient(ellipse at center top, rgba(247, 147, 26, 0.08) 0%, transparent 60%);
+    }
+    .product-detail-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .product-detail-hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .product-detail-hero .year-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #000;
+      padding: 0.35rem 1.25rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .spec-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .spec-card .spec-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .spec-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .spec-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .feature-list {
+      max-width: 700px;
+      margin: 3rem auto 0;
+    }
+    .feature-list .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature-list .feature-item:last-child {
+      border-bottom: none;
+    }
+    .feature-item .check {
+      color: var(--accent);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .feature-item div[data-i18n] {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .image-gallery img {
+      max-width: 400px;
+      width: 100%;
+    }
+    .image-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .product-detail-hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ LIGHTNINGASIC</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#history" data-i18n="nav_history">History</a></li>
+        <li><a href="index.html#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <button class="lang-toggle" data-i18n="lang_toggle" aria-label="Switch language">中文</button>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="product-detail-hero">
+    <div class="hero-content fade-in">
+      <div class="year-badge">2014</div>
+      <h1 data-i18n="wallet_title">BitExchange Hardware Wallet</h1>
+      <p class="subtitle" data-i18n="wallet_subtitle">An early hardware wallet product that laid the technical foundation and design philosophy for the subsequent OpenShield wallet.</p>
+      <a href="index.html" class="btn btn-secondary back-link" data-i18n="back_home">← Back to Home</a>
+    </div>
+  </section>
+
+  <section class="about" style="border-top: none;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="specs_title">Technical Specifications</h2>
+        <p data-i18n="specs_desc">Crafted with precision, designed for security</p>
+      </div>
+      <div class="specs-grid fade-in">
+        <div class="spec-card">
+          <div class="spec-icon">📐</div>
+          <h3 data-i18n="spec_dimension_title">Dimensions</h3>
+          <p data-i18n="spec_dimension_desc">3.1cm × 2.1cm × 0.43cm<br>Super slim form factor</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔮</div>
+          <h3 data-i18n="spec_sapphire_title">Sapphire Glass</h3>
+          <p data-i18n="spec_sapphire_desc">Scratch-resistant sapphire crystal display, premium durability</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">👆</div>
+          <h3 data-i18n="spec_touch_title">Touch Screen</h3>
+          <p data-i18n="spec_touch_desc">Capacitive touch screen for intuitive interaction</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔩</div>
+          <h3 data-i18n="spec_cnc_title">CNC Aluminum</h3>
+          <p data-i18n="spec_cnc_desc">High-precision CNC aluminum alloy case, robust yet elegant</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔒</div>
+          <h3 data-i18n="spec_pin_title">Dual Security</h3>
+          <p data-i18n="spec_pin_desc">PIN code + seed phrase for double-layer protection</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">✏️</div>
+          <h3 data-i18n="spec_laser_title">Custom Engraving</h3>
+          <p data-i18n="spec_laser_desc">Custom laser printing on backside for personalization</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="features_title">Key Features</h2>
+        <p data-i18n="features_desc">What made BitExchange Hardware Wallet a pioneer</p>
+      </div>
+      <div class="feature-list fade-in">
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat1">Easy and secure Bitcoin storage</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat2">Random private key generation, on-device signing. Private key never touches the network.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat3">PIN code + seed phrase — double security</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat4">Fully open-source code, transparent and verifiable</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat5">Sapphire glass display, scratch-resistant and premium</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat6">Capacitive touch screen for easy navigation</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat7">Ultra-slim: 0.43cm thick, 3.1cm × 2.1cm footprint</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat8">CNC high-precision aluminum alloy case</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat9">Custom laser engraving on backside</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="gallery_title">Gallery</h2>
+        <p data-i18n="gallery_desc">Product images</p>
+      </div>
+      <div class="image-gallery fade-in">
+        <img src="pic/正面.jpg" alt="Front view">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">⚡ LIGHTNINGASIC</div>
+      <div class="footer-links">
+        <a href="index.html#about" data-i18n="footer_about">About</a>
+        <a href="index.html#history" data-i18n="footer_history">History</a>
+        <a href="index.html#products" data-i18n="footer_products">Products</a>
+        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
+        <a href="https://zenity.top" target="_blank" rel="noopener">Zenity</a>
+        <a href="https://iclawmini.com" target="_blank" rel="noopener">IClawMini</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copyright">© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        lang_toggle: '中文',
+        page_title: 'BitExchange Hardware Wallet 2014 - LIGHTNINGASIC',
+        nav_about: 'About',
+        nav_history: 'History',
+        nav_products: 'Products',
+        nav_contact: 'Contact',
+        wallet_title: 'BitExchange Hardware Wallet',
+        wallet_subtitle: 'An early hardware wallet product that laid the technical foundation and design philosophy for the subsequent OpenShield wallet.',
+        back_home: '← Back to Home',
+        specs_title: 'Technical Specifications',
+        specs_desc: 'Crafted with precision, designed for security',
+        spec_dimension_title: 'Dimensions',
+        spec_dimension_desc: '3.1cm × 2.1cm × 0.43cm — Super slim form factor',
+        spec_sapphire_title: 'Sapphire Glass',
+        spec_sapphire_desc: 'Scratch-resistant sapphire crystal display, premium durability',
+        spec_touch_title: 'Touch Screen',
+        spec_touch_desc: 'Capacitive touch screen for intuitive interaction',
+        spec_cnc_title: 'CNC Aluminum',
+        spec_cnc_desc: 'High-precision CNC aluminum alloy case, robust yet elegant',
+        spec_pin_title: 'Dual Security',
+        spec_pin_desc: 'PIN code + seed phrase for double-layer protection',
+        spec_laser_title: 'Custom Engraving',
+        spec_laser_desc: 'Custom laser printing on backside for personalization',
+        features_title: 'Key Features',
+        features_desc: 'What made BitExchange Hardware Wallet a pioneer',
+        feat1: 'Easy and secure Bitcoin storage',
+        feat2: 'Random private key generation, on-device signing. Private key never touches the network.',
+        feat3: 'PIN code + seed phrase — double security',
+        feat4: 'Fully open-source code, transparent and verifiable',
+        feat5: 'Sapphire glass display, scratch-resistant and premium',
+        feat6: 'Capacitive touch screen for easy navigation',
+        feat7: 'Ultra-slim: 0.43cm thick, 3.1cm × 2.1cm footprint',
+        feat8: 'CNC high-precision aluminum alloy case',
+        feat9: 'Custom laser engraving on backside',
+        gallery_title: 'Gallery',
+        gallery_desc: 'Product images',
+        footer_about: 'About',
+        footer_history: 'History',
+        footer_products: 'Products',
+        footer_contact: 'Contact',
+        footer_copyright: '© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.',
+      },
+      zh: {
+        lang_toggle: 'English',
+        page_title: 'BitExchange 硬件钱包 2014 - LIGHTNINGASIC',
+        nav_about: '介绍',
+        nav_history: '历史产品',
+        nav_products: '热销产品',
+        nav_contact: '联络',
+        wallet_title: 'BitExchange 硬件钱包',
+        wallet_subtitle: '一款早期的硬體錢包產品，為後續的 OpenShield 錢包奠定了技術基礎與設計理念。',
+        back_home: '← 返回首页',
+        specs_title: '技术规格',
+        specs_desc: '精工细作，为安全而生',
+        spec_dimension_title: '尺寸',
+        spec_dimension_desc: '3.1cm × 2.1cm × 0.43cm，极致超薄',
+        spec_sapphire_title: '蓝宝石玻璃',
+        spec_sapphire_desc: '耐磨抗刮的蓝宝石水晶屏幕，顶级耐用性',
+        spec_touch_title: '触摸屏',
+        spec_touch_desc: '电容触摸屏，操作直观流畅',
+        spec_cnc_title: 'CNC 铝合金',
+        spec_cnc_desc: '高精度 CNC 铝合金外壳，坚固优雅',
+        spec_pin_title: '双重安全',
+        spec_pin_desc: 'PIN 码 + 种子词双重保护',
+        spec_laser_title: '个性刻字',
+        spec_laser_desc: '背面支持激光刻字，彰显个性',
+        features_title: '核心特点',
+        features_desc: 'BitExchange 硬件钱包的开创性设计',
+        feat1: '简单安全地存储比特币',
+        feat2: '随机产生密钥，在钱包内签名。私钥永不触网。',
+        feat3: '访问密码加脑种子，双重安全',
+        feat4: '代码开源，透明可验证',
+        feat5: '蓝宝石玻璃，耐磨抗刮',
+        feat6: '电容触摸屏，操作流畅',
+        feat7: '极致超薄：0.43cm，3.1cm×2.1cm',
+        feat8: 'CNC高精度铝合金外壳',
+        feat9: '背面个性刻字',
+        gallery_title: '产品图集',
+        gallery_desc: '产品实物照片',
+        footer_about: '介绍',
+        footer_history: '历史产品',
+        footer_products: '热销产品',
+        footer_contact: '联络',
+        footer_copyright: '© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.',
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.title = t.page_title;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.value = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'en' ? 'zh' : 'en');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || 'en';
+      setLanguage(savedLang);
+
+      document.querySelector('.lang-toggle').addEventListener('click', toggleLanguage);
+
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuBtn.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          menuBtn.textContent = '☰';
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
