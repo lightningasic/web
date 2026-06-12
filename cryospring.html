@@ -4,7 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="page_title">CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC</title>
+  <meta name="description" content="CryoSpring immersion liquid cooling by LIGHTNINGASIC. Submerge heat sources in coolant with phase-change heat dissipation for Bitcoin mining ASICs. Silent, dust-free, extends equipment lifespan.">
+  <meta name="keywords" content="CryoSpring, cold spring, immersion liquid cooling, Bitcoin mining cooling, ASIC liquid cooling, phase change cooling, mining rig cooling, LIGHTNINGASIC">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightningasic.com/cryospring.html">
+  <meta property="og:title" content="CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC">
+  <meta property="og:description" content="CryoSpring immersion liquid cooling technology. Phase-change heat dissipation for ASIC miners. Near-silent, dust-free, extends equipment lifespan, supports overclocking.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://lightningasic.com/cryospring.html">
+  <meta property="og:image" content="https://lightningasic.com/og-image.png">
+  <meta property="og:site_name" content="LIGHTNINGASIC">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC">
+  <meta name="twitter:description" content="Immersion liquid cooling for ASIC miners. Phase-change dissipation. Silent, dust-free, extends lifespan, supports overclocking.">
+  <meta name="twitter:image" content="https://lightningasic.com/og-image.png">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "CryoSpring Immersion Liquid Cooling",
+    "url": "https://lightningasic.com/cryospring.html",
+    "description": "Immersion liquid cooling technology for Bitcoin mining ASICs and high-performance computing. Phase-change heat dissipation, near-silent operation, dust-free environment.",
+    "brand": {
+      "@type": "Brand",
+      "name": "LIGHTNINGASIC"
+    },
+    "category": "Liquid Cooling System"
+  }
+  </script>
   <style>
     .product-detail-hero {
       min-height: 80vh;
@@ -254,6 +283,11 @@
       en: {
         lang_toggle: '中文',
         page_title: 'CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC',
+        meta_desc: 'CryoSpring immersion liquid cooling by LIGHTNINGASIC. Submerge heat sources in coolant with phase-change heat dissipation for Bitcoin mining ASICs. Silent, dust-free, extends equipment lifespan.',
+        og_title: 'CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC',
+        og_desc: 'CryoSpring immersion liquid cooling. Phase-change heat dissipation for ASIC miners. Near-silent, dust-free, extends lifespan, supports overclocking.',
+        twitter_title: 'CryoSpring 冷泉 - Immersion Liquid Cooling - LIGHTNINGASIC',
+        twitter_desc: 'Immersion liquid cooling for ASIC miners. Phase-change. Silent, dust-free, extends lifespan, overclocking.',
         nav_about: 'About',
         nav_history: 'History',
         nav_products: 'Products',
@@ -283,6 +317,11 @@
       zh: {
         lang_toggle: 'English',
         page_title: 'CryoSpring 冷泉 - 浸没式液冷技术 - LIGHTNINGASIC',
+        meta_desc: 'LIGHTNINGASIC 出品的 CryoSpring 冷泉浸没式液冷散热技术。将热源完全浸没于冷却液中，通过相变带走热量。适用于比特币矿机 ASIC 散热。静音、无尘、延长设备寿命。',
+        og_title: 'CryoSpring 冷泉 - 浸没式液冷技术 - LIGHTNINGASIC',
+        og_desc: 'CryoSpring 浸没式液冷技术。ASIC 矿机相变散热。近静音、无尘、延长寿命、支持超频。',
+        twitter_title: 'CryoSpring 冷泉 - 浸没式液冷技术 - LIGHTNINGASIC',
+        twitter_desc: 'ASIC 矿机浸没式液冷散热。相变制冷，静音无尘，延长寿命，支持超频。',
         nav_about: '介绍',
         nav_history: '历史产品',
         nav_products: '热销产品',
@@ -328,6 +367,20 @@
           }
         }
       });
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle && t.og_title) ogTitle.setAttribute('content', t.og_title);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc && t.og_desc) ogDesc.setAttribute('content', t.og_desc);
+      const twTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twTitle && t.twitter_title) twTitle.setAttribute('content', t.twitter_title);
+      const twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc && t.twitter_desc) twDesc.setAttribute('content', t.twitter_desc);
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'zh_CN');
+
       localStorage.setItem('lang', lang);
     }
 

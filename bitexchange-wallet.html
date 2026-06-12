@@ -4,7 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="page_title">BitExchange Hardware Wallet 2014 - LIGHTNINGASIC</title>
+  <meta name="description" content="BitExchange Hardware Wallet (2014) by LIGHTNINGASIC. Ultra-slim Bitcoin hardware wallet with sapphire glass, PIN+seed dual security, open-source code. The precursor to OpenShield.">
+  <meta name="keywords" content="BitExchange, hardware wallet, Bitcoin wallet, cold storage, LIGHTNINGASIC, OpenShield, cryptocurrency wallet, sapphire glass wallet">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightningasic.com/bitexchange-wallet.html">
+  <meta property="og:title" content="BitExchange Hardware Wallet 2014 - LIGHTNINGASIC">
+  <meta property="og:description" content="2014 Bitcoin hardware wallet. Ultra-slim (0.43cm), sapphire glass display, touch screen, open-source, PIN+seed phrase security. Precursor to OpenShield.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://lightningasic.com/bitexchange-wallet.html">
+  <meta property="og:image" content="https://lightningasic.com/og-image.png">
+  <meta property="og:site_name" content="LIGHTNINGASIC">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BitExchange Hardware Wallet 2014 - LIGHTNINGASIC">
+  <meta name="twitter:description" content="2014 Bitcoin hardware wallet. Ultra-slim (0.43cm), sapphire glass display, open-source, PIN+seed phrase security.">
+  <meta name="twitter:image" content="https://lightningasic.com/og-image.png">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BitExchange Hardware Wallet",
+    "url": "https://lightningasic.com/bitexchange-wallet.html",
+    "image": "https://lightningasic.com/pic/正面.jpg",
+    "description": "Ultra-slim Bitcoin hardware wallet (2014) with sapphire glass display, capacitive touch, CNC aluminum alloy case, PIN+seed phrase dual security, open-source firmware.",
+    "brand": {
+      "@type": "Brand",
+      "name": "LIGHTNINGASIC"
+    },
+    "category": "Cryptocurrency Hardware Wallet",
+    "depth": "0.43 cm"
+  }
+  </script>
   <style>
     .product-detail-hero {
       min-height: 80vh;
@@ -292,6 +323,11 @@
       en: {
         lang_toggle: '中文',
         page_title: 'BitExchange Hardware Wallet 2014 - LIGHTNINGASIC',
+        meta_desc: 'BitExchange Hardware Wallet (2014) by LIGHTNINGASIC. Ultra-slim Bitcoin hardware wallet with sapphire glass, PIN+seed dual security, open-source code. The precursor to OpenShield.',
+        og_title: 'BitExchange Hardware Wallet 2014 - LIGHTNINGASIC',
+        og_desc: '2014 Bitcoin hardware wallet. Ultra-slim (0.43cm), sapphire glass display, touch screen, open-source, PIN+seed phrase security. Precursor to OpenShield.',
+        twitter_title: 'BitExchange Hardware Wallet 2014 - LIGHTNINGASIC',
+        twitter_desc: '2014 Bitcoin hardware wallet. Ultra-slim (0.43cm), sapphire glass display, open-source, PIN+seed phrase security.',
         nav_about: 'About',
         nav_history: 'History',
         nav_products: 'Products',
@@ -335,6 +371,11 @@
       zh: {
         lang_toggle: 'English',
         page_title: 'BitExchange 硬件钱包 2014 - LIGHTNINGASIC',
+        meta_desc: 'LIGHTNINGASIC 出品的 BitExchange 硬件钱包（2014年）。超薄比特币硬件钱包，蓝宝石玻璃屏幕，PIN+脑种子双重安全，开源代码。OpenShield 的前身。',
+        og_title: 'BitExchange 硬件钱包 2014 - LIGHTNINGASIC',
+        og_desc: '2014年比特币硬件钱包。超薄（0.43cm），蓝宝石玻璃屏幕，触摸操作，开源，PIN+脑种子双重保护。OpenShield 前身。',
+        twitter_title: 'BitExchange 硬件钱包 2014 - LIGHTNINGASIC',
+        twitter_desc: '2014年比特币硬件钱包。超薄0.43cm，蓝宝石玻璃，开源，PIN+脑种子双重保护。',
         nav_about: '介绍',
         nav_history: '历史产品',
         nav_products: '热销产品',
@@ -394,6 +435,20 @@
           }
         }
       });
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle && t.og_title) ogTitle.setAttribute('content', t.og_title);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc && t.og_desc) ogDesc.setAttribute('content', t.og_desc);
+      const twTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twTitle && t.twitter_title) twTitle.setAttribute('content', t.twitter_title);
+      const twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc && t.twitter_desc) twDesc.setAttribute('content', t.twitter_desc);
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'zh_CN');
+
       localStorage.setItem('lang', lang);
     }
 
