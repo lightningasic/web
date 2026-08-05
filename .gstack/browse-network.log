@@ -1,0 +1,7 @@
+[2026-08-05T08:41:02.107Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/index.html → 200 (14ms, 16484B)
+[2026-08-05T08:41:02.140Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/css/style.css?v=3 → 200 (5ms, 11667B)
+[2026-08-05T08:41:02.140Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/js/main.js?v=2 → 200 (18ms, 15683B)
+[2026-08-05T08:41:02.804Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/pic/hardid-logo.png → 200 (4ms, 21727B)
+[2026-08-05T08:55:24.377Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/bitexchange-wallet.html → 200 (2ms, 20526B)
+[2026-08-05T08:55:24.403Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/css/style.css → 200 (3ms, 11667B)
+[2026-08-05T08:55:24.404Z] GET file:///home/jackliao/%E6%96%87%E6%A1%A3/LIGHTNINGASIC/website/pic/%E6%AD%A3%E9%9D%A2.jpg → 200 (2ms, 12685B)
