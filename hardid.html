@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">HardID Hardware Wallet - LIGHTNINGASIC</title>
+  <meta name="description" content="HardID Hardware Wallet by LIGHTNINGASIC. Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.">
+  <meta name="keywords" content="HardID, hardware wallet, Bitcoin wallet, cold storage, FIDO2, U2F, security key, passkey, air-gap, LIGHTNINGASIC, open-source wallet, Clear Sign">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightningasic.com/hardid.html">
+  <meta property="og:title" content="HardID Hardware Wallet - LIGHTNINGASIC">
+  <meta property="og:description" content="Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://lightningasic.com/hardid.html">
+  <meta property="og:image" content="https://lightningasic.com/pic/hardid-logo.png">
+  <meta property="og:site_name" content="LIGHTNINGASIC">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HardID Hardware Wallet - LIGHTNINGASIC">
+  <meta name="twitter:description" content="Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.">
+  <meta name="twitter:image" content="https://lightningasic.com/pic/hardid-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "HardID Hardware Wallet",
+    "url": "https://lightningasic.com/hardid.html",
+    "image": "https://lightningasic.com/pic/hardid-logo.png",
+    "description": "Fully open-source, air-gapped hardware wallet built around two EAL6+ secure elements. Private keys never leave the device. Clear Sign, FIDO2/U2F passkeys, reproducible builds.",
+    "brand": {
+      "@type": "Brand",
+      "name": "LIGHTNINGASIC"
+    },
+    "category": "Cryptocurrency Hardware Wallet"
+  }
+  </script>
+  <style>
+    .product-detail-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      background: radial-gradient(ellipse at center top, rgba(247, 147, 26, 0.08) 0%, transparent 60%);
+    }
+    .product-detail-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .product-detail-hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .product-detail-hero .year-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #000;
+      padding: 0.35rem 1.25rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .spec-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .spec-card .spec-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .spec-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .spec-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .feature-list {
+      max-width: 700px;
+      margin: 3rem auto 0;
+    }
+    .feature-list .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature-list .feature-item:last-child {
+      border-bottom: none;
+    }
+    .feature-item .check {
+      color: var(--accent);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .feature-item div[data-i18n] {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .image-gallery img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .product-detail-hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ LIGHTNINGASIC</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#history" data-i18n="nav_history">History</a></li>
+        <li><a href="index.html#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <button class="lang-toggle" data-i18n="lang_toggle" aria-label="Switch language">中文</button>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="product-detail-hero">
+    <div class="hero-content fade-in">
+      <div class="year-badge">2026</div>
+      <h1 data-i18n="hardid_title">HardID Hardware Wallet</h1>
+      <p class="subtitle" data-i18n="hardid_subtitle">Fully open-source, air-gapped hardware wallet. Keys never leave the device — what you see is what you sign.</p>
+      <a href="index.html" class="btn btn-secondary back-link" data-i18n="back_home">← Back to Home</a>
+    </div>
+  </section>
+
+  <section class="about" style="border-top: none;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="specs_title">Technical Highlights</h2>
+        <p data-i18n="specs_desc">Designed for signing security, built for trust</p>
+      </div>
+      <div class="specs-grid fade-in">
+        <div class="spec-card">
+          <div class="spec-icon">🔒</div>
+          <h3 data-i18n="spec_se_title">Dual EAL6+ Secure Elements</h3>
+          <p data-i18n="spec_se_desc">Private keys live only inside certified EAL6+ secure elements. The MCU stores no key material whatsoever.</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">✈️</div>
+          <h3 data-i18n="spec_airgap_title">Air-Gapped</h3>
+          <p data-i18n="spec_airgap_desc">No radio. Transactions and signatures move via QR code — the device is physically isolated from the network.</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">👁️</div>
+          <h3 data-i18n="spec_clearsign_title">Clear Sign</h3>
+          <p data-i18n="spec_clearsign_desc">What you see is what you sign. Human-readable recipient, amount and contract intent on screen — no blind signing.</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔑</div>
+          <h3 data-i18n="spec_fido_title">FIDO2 / U2F Passkeys</h3>
+          <p data-i18n="spec_fido_desc">Works as a security key on GitHub, Google and any WebAuthn site — in Chrome and Firefox, over USB.</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🧾</div>
+          <h3 data-i18n="spec_repro_title">Reproducible Builds</h3>
+          <p data-i18n="spec_repro_desc">Firmware, schematics and host tools are fully open source. Compile and compare hashes yourself — zero trust required.</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🛡️</div>
+          <h3 data-i18n="spec_audit_title">Security Audited</h3>
+          <p data-i18n="spec_audit_desc">25 rounds of security audit against the secure-core. No key self-destruction, ever — a stolen device is useless, a lost seed can always recover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="features_title">Key Features</h2>
+        <p data-i18n="features_desc">Signing security as the sole core</p>
+      </div>
+      <div class="feature-list fade-in">
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat1">Offline BIP39 seed generation — 12/18/24 words, displayed on screen only once, never exported.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat2">BIP32/BIP44 deterministic derivation with per-coin path isolation; independent digital-identity key paths.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat3">Clear Sign for BTC/UTXO (PSBT) and EVM (legacy, EIP-1559, EIP-712) — field-by-field confirmation, unknown calls flagged in red.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat4">M-of-N multisig coordination; each signer independently confirms the same intent on their own device.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat5">FIDO2/CTAP2 + U2F passkeys — one device, both a hardware wallet and a universal security key.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat6">RFC6979 deterministic signing with anti-exfiltration — no covert channels, host-verifiable.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat7">PIN with exponential backoff (capped at 24h) — no attempt limit, no self-destruction, never wipes your assets.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat8">Optional 25th-word passphrase hidden wallets and duress PIN decoy wallet.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat9">Secure boot with ECDSA firmware signature verification and anti-rollback version counter.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="check">✓</div>
+          <div>
+            <div data-i18n="feat10">Apache 2.0 licensed — open hardware, open firmware, open tools.</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="https://github.com/lightningasic/HardID" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="github_link">View Source on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 data-i18n="gallery_title">Gallery</h2>
+        <p data-i18n="gallery_desc">Product images</p>
+      </div>
+      <div class="image-gallery fade-in">
+        <img src="pic/正面.jpg" alt="HardID front view">
+        <img src="pic/侧面1.jpg" alt="HardID side view 1">
+        <img src="pic/侧面2.jpg" alt="HardID side view 2">
+        <img src="pic/底部.jpg" alt="HardID bottom view">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">⚡ LIGHTNINGASIC</div>
+      <div class="footer-links">
+        <a href="index.html#about" data-i18n="footer_about">About</a>
+        <a href="index.html#history" data-i18n="footer_history">History</a>
+        <a href="index.html#products" data-i18n="footer_products">Products</a>
+        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
+        <a href="https://zenity.top" target="_blank" rel="noopener">Zenity</a>
+        <a href="https://iclawmini.com" target="_blank" rel="noopener">IClawMini</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copyright">© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        lang_toggle: '中文',
+        page_title: 'HardID Hardware Wallet - LIGHTNINGASIC',
+        meta_desc: 'HardID Hardware Wallet by LIGHTNINGASIC. Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.',
+        og_title: 'HardID Hardware Wallet - LIGHTNINGASIC',
+        og_desc: 'Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.',
+        twitter_title: 'HardID Hardware Wallet - LIGHTNINGASIC',
+        twitter_desc: 'Fully open-source, air-gapped hardware wallet. Keys never leave the device. Clear Sign, FIDO2/U2F, reproducible builds.',
+        nav_about: 'About',
+        nav_history: 'History',
+        nav_products: 'Products',
+        nav_contact: 'Contact',
+        hardid_title: 'HardID Hardware Wallet',
+        hardid_subtitle: 'Fully open-source, air-gapped hardware wallet. Keys never leave the device — what you see is what you sign.',
+        back_home: '← Back to Home',
+        specs_title: 'Technical Highlights',
+        specs_desc: 'Designed for signing security, built for trust',
+        spec_se_title: 'Dual EAL6+ Secure Elements',
+        spec_se_desc: 'Private keys live only inside certified EAL6+ secure elements. The MCU stores no key material whatsoever.',
+        spec_airgap_title: 'Air-Gapped',
+        spec_airgap_desc: 'No radio. Transactions and signatures move via QR code — the device is physically isolated from the network.',
+        spec_clearsign_title: 'Clear Sign',
+        spec_clearsign_desc: 'What you see is what you sign. Human-readable recipient, amount and contract intent on screen — no blind signing.',
+        spec_fido_title: 'FIDO2 / U2F Passkeys',
+        spec_fido_desc: 'Works as a security key on GitHub, Google and any WebAuthn site — in Chrome and Firefox, over USB.',
+        spec_repro_title: 'Reproducible Builds',
+        spec_repro_desc: 'Firmware, schematics and host tools are fully open source. Compile and compare hashes yourself — zero trust required.',
+        spec_audit_title: 'Security Audited',
+        spec_audit_desc: '25 rounds of security audit against the secure-core. No key self-destruction, ever — a stolen device is useless, a lost seed can always recover.',
+        features_title: 'Key Features',
+        features_desc: 'Signing security as the sole core',
+        feat1: 'Offline BIP39 seed generation — 12/18/24 words, displayed on screen only once, never exported.',
+        feat2: 'BIP32/BIP44 deterministic derivation with per-coin path isolation; independent digital-identity key paths.',
+        feat3: 'Clear Sign for BTC/UTXO (PSBT) and EVM (legacy, EIP-1559, EIP-712) — field-by-field confirmation, unknown calls flagged in red.',
+        feat4: 'M-of-N multisig coordination; each signer independently confirms the same intent on their own device.',
+        feat5: 'FIDO2/CTAP2 + U2F passkeys — one device, both a hardware wallet and a universal security key.',
+        feat6: 'RFC6979 deterministic signing with anti-exfiltration — no covert channels, host-verifiable.',
+        feat7: 'PIN with exponential backoff (capped at 24h) — no attempt limit, no self-destruction, never wipes your assets.',
+        feat8: 'Optional 25th-word passphrase hidden wallets and duress PIN decoy wallet.',
+        feat9: 'Secure boot with ECDSA firmware signature verification and anti-rollback version counter.',
+        feat10: 'Apache 2.0 licensed — open hardware, open firmware, open tools.',
+        github_link: 'View Source on GitHub →',
+        gallery_title: 'Gallery',
+        gallery_desc: 'Product images',
+        footer_about: 'About',
+        footer_history: 'History',
+        footer_products: 'Products',
+        footer_contact: 'Contact',
+        footer_copyright: '© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.',
+      },
+      zh: {
+        lang_toggle: 'English',
+        page_title: 'HardID 硬件钱包 - LIGHTNINGASIC',
+        meta_desc: 'LIGHTNINGASIC 出品的 HardID 硬件钱包。全开源、气隙隔离，双 EAL6+ 安全芯片。私钥永不离开设备。Clear Sign 透明签名、FIDO2/U2F、可复现构建。',
+        og_title: 'HardID 硬件钱包 - LIGHTNINGASIC',
+        og_desc: '全开源、气隙隔离的硬件钱包，双 EAL6+ 安全芯片。私钥永不离开设备。Clear Sign 透明签名、FIDO2/U2F、可复现构建。',
+        twitter_title: 'HardID 硬件钱包 - LIGHTNINGASIC',
+        twitter_desc: '全开源、气隙隔离的硬件钱包。私钥永不离开设备。Clear Sign、FIDO2/U2F、可复现构建。',
+        nav_about: '介绍',
+        nav_history: '历史产品',
+        nav_products: '热销产品',
+        nav_contact: '联络',
+        hardid_title: 'HardID 硬件钱包',
+        hardid_subtitle: '全开源、气隙隔离的硬件钱包。私钥永不离开设备——所见即所签。',
+        back_home: '← 返回首页',
+        specs_title: '技术亮点',
+        specs_desc: '为签名安全而生，为信任而造',
+        spec_se_title: '双 EAL6+ 安全芯片',
+        spec_se_desc: '私钥仅存于通过认证的 EAL6+ 安全芯片内，MCU 不保存任何密钥材料。',
+        spec_airgap_title: '气隙隔离',
+        spec_airgap_desc: '无任何无线模块。交易与签名通过二维码传输，设备与网络物理隔离。',
+        spec_clearsign_title: 'Clear Sign 透明签名',
+        spec_clearsign_desc: '所见即所签。屏幕显示人类可读的收款方、金额与合约意图，杜绝盲签。',
+        spec_fido_title: 'FIDO2 / U2F 通行密钥',
+        spec_fido_desc: '可作为 GitHub、Google 及一切 WebAuthn 网站的安全密钥，Chrome 与 Firefox 下通过 USB 使用。',
+        spec_repro_title: '可复现构建',
+        spec_repro_desc: '固件、原理图与主机工具全部开源。你可自行编译比对哈希，零信任。',
+        spec_audit_title: '安全审计',
+        spec_audit_desc: '针对安全核心进行 25 轮安全审计。绝无密钥自毁机制——被偷的设备毫无用处，丢失种子词永远可恢复资产。',
+        features_title: '核心特点',
+        features_desc: '签名安全是唯一核心',
+        feat1: '离线 BIP39 种子生成——12/18/24 个词，仅在屏幕上显示一次，绝无导出。',
+        feat2: 'BIP32/BIP44 确定性派生，按币种隔离路径；独立数字身份密钥路径。',
+        feat3: 'BTC/UTXO（PSBT）与 EVM（legacy、EIP-1559、EIP-712）Clear Sign 透明签名，逐字段确认，未知调用红色警示。',
+        feat4: 'M-of-N 多签协作，每个签名人在自己的设备上独立确认同一意图。',
+        feat5: 'FIDO2/CTAP2 + U2F 通行密钥——一台设备，既是硬件钱包，又是通用安全密钥。',
+        feat6: 'RFC6979 确定性签名 + 防渗出，无隐蔽信道，主机可验证。',
+        feat7: 'PIN 指数退避（上限 24 小时）——无尝试次数上限、无自毁机制，永不抹除资产。',
+        feat8: '可选第 25 个词口令隐藏钱包，以及胁迫 PIN 诱饵钱包。',
+        feat9: '安全启动，ECDSA 固件签名验证 + 防回滚版本计数器。',
+        feat10: 'Apache 2.0 开源——开源硬件、开源固件、开源工具。',
+        github_link: '在 GitHub 查看源码 →',
+        gallery_title: '产品图集',
+        gallery_desc: '产品实物照片',
+        footer_about: '介绍',
+        footer_history: '历史产品',
+        footer_products: '热销产品',
+        footer_contact: '联络',
+        footer_copyright: '© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.',
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.title = t.page_title;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.value = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && t.meta_desc) metaDesc.setAttribute('content', t.meta_desc);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle && t.og_title) ogTitle.setAttribute('content', t.og_title);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc && t.og_desc) ogDesc.setAttribute('content', t.og_desc);
+      const twTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twTitle && t.twitter_title) twTitle.setAttribute('content', t.twitter_title);
+      const twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc && t.twitter_desc) twDesc.setAttribute('content', t.twitter_desc);
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'zh_CN');
+
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'en' ? 'zh' : 'en');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || 'en';
+      setLanguage(savedLang);
+
+      document.querySelector('.lang-toggle').addEventListener('click', toggleLanguage);
+
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuBtn.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          menuBtn.textContent = '☰';
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

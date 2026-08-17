@@ -4,13 +4,19 @@ Founded in 2013 by JACK LIAO, specializing in AI and blockchain hardware innovat
 
 ## Products
 
-- BitExchange Hardware Wallet (2014): Ultra-slim Bitcoin hardware wallet, precursor to OpenShield.
+- HardID Hardware Wallet: Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F passkeys, reproducible builds.
+  Docs: https://lightningasic.com/hardid.html
+
+- BitcoinBall: Bitcoin miners built into everyday home appliances — digital photo frame, smart alarm clock, smart speaker. Positive-sum home-lottery model.
+  Docs: https://lightningasic.com/bitcoinball.html
+
+- BitExchange Hardware Wallet (2014): Ultra-slim Bitcoin hardware wallet, precursor to HardID.
   Docs: https://lightningasic.com/bitexchange-wallet.html
 
 - CryoSpring Immersion Liquid Cooling: Phase-change liquid cooling for Bitcoin mining ASICs.
   Docs: https://lightningasic.com/cryospring.html
 
-- OpenShield: Hardware wallet (successor to BitExchange). https://zenity.top
+- Zenity: Smart luxury jewelry. https://zenity.top
 
 - IClawMini: AI edge computing device. https://iclawmini.com
 
