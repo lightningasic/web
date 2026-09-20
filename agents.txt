@@ -1,0 +1,53 @@
+# LIGHTNINGASIC — Agent Capability Registry
+
+> This file tells AI agents what LightningASIC.com can do, what data is available,
+> and how to act on a user's behalf. Machine-readable version:
+> https://lightningasic.com/.well-known/agent-skills/index.json
+
+## Capabilities
+
+LightningASIC exposes four callable capabilities. Each has a SKILL.md with the
+full workflow (when to invoke, what to collect, which endpoint to call, fallback):
+
+1. **search-miners** — Search the mining/product catalog by algorithm, hashrate,
+   power, or budget. Data: GET /api/miners.json (mining hardware) and
+   GET /api/catalog.json (all products). Skills:
+   /.well-known/agent-skills/search-miners/SKILL.md
+2. **check-stock** — Availability and lead time per model.
+   Data: GET /api/stock.json?model=<id>&qty=<n> (static snapshot; confirm by email).
+   Skills: /.well-known/agent-skills/check-stock/SKILL.md
+3. **get-quote** — Bulk quote request (10+ units / wholesale / dealer).
+   Contract: /api/quotes.json. Submit by email to lx@lightningasic.com
+   (POST endpoint arrives with Cloudflare deployment — see ai-native/DEPLOY.md).
+   Skills: /.well-known/agent-skills/get-quote/SKILL.md
+4. **book-tech-support** — Route technical support requests (setup, troubleshooting,
+   firmware, RMA). Skills: /.well-known/agent-skills/book-tech-support/SKILL.md
+
+## Data endpoints (all GET, static JSON, no auth)
+
+- https://lightningasic.com/api/catalog.json          — full product catalog
+- https://lightningasic.com/api/miners.json?algorithm=SHA-256  — mining hardware (+advisory filters)
+- https://lightningasic.com/api/stock.json?model=<id>  — availability & lead time
+- https://lightningasic.com/api/quotes.json            — quote contract & submission
+- https://lightningasic.com/llms.txt                   — content index
+- https://lightningasic.com/llms-full.txt              — full site content as markdown
+
+## Human entry points
+
+- https://lightningasic.com/ask.html  — natural language query against the catalog
+- https://lightningasic.com/roi.html  — mining ROI/break-even calculator
+- https://lightningasic.com/          — product pages
+
+## Ground rules for agents
+
+- All product data is REAL and sourced from lightningasic.com product pages.
+  Do not invent hashrates, prices, or models not present in the JSON catalog.
+- Prices and live stock are not published; route purchase intent to
+  lx@lightningasic.com (quote within 4 business hours).
+- Bulk orders: 2-4 week typical lead time.
+- BitcoinBall is a SOLO-mining home-lottery product, not a datacenter miner:
+  efficiency (J/TH) and pool revenue expectations differ from farm deployment.
+
+## Feedback
+
+- Corrections / data updates: lx@lightningasic.com

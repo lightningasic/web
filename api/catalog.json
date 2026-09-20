@@ -1,0 +1,119 @@
+{
+  "$schema": "https://lightningasic.com/api/catalog.schema.json",
+  "updated": "2026-09-20",
+  "brand": {
+    "name": "LIGHTNINGASIC",
+    "founder": "JACK LIAO",
+    "founded": 2013,
+    "website": "https://lightningasic.com",
+    "contact": "lx@lightningasic.com"
+  },
+  "products": [
+    {
+      "id": "hardid",
+      "name": "HardID Hardware Wallet",
+      "category": "hardware-wallet",
+      "summary": "Fully open-source, air-gapped hardware wallet. Keys never leave the device — what you see is what you sign.",
+      "specs": {
+        "secure_elements": "Dual EAL6+ secure elements (MCU stores no key material)",
+        "connection": "Air-gapped via QR code; USB for FIDO2",
+        "signing_types": ["BTC/UTXO (PSBT)", "EVM legacy", "EIP-1559", "EIP-712"],
+        "seed": "BIP39 offline generation, 12/18/24 words, shown once, never exported",
+        "derivation": "BIP32/BIP44 with per-coin path isolation",
+        "passkeys": "FIDO2/CTAP2 + U2F",
+        "multisig": "M-of-N multisig coordination",
+        "signing_security": "RFC6979 deterministic with anti-exfiltration",
+        "pin": "Exponential backoff capped at 24h; optional duress PIN decoy wallet",
+        "extra_security": "Optional 25th-word passphrase hidden wallets; secure boot with ECDSA firmware verification and anti-rollback",
+        "license": "Apache 2.0 (open hardware, open firmware, open tools)",
+        "audit": "25 rounds of security audit"
+      },
+      "badges": ["Fully open-source", "Reproducible builds", "Air-gapped", "Clear Sign"],
+      "page": "https://lightningasic.com/hardid.html",
+      "source": "https://github.com/lightningasic"
+    },
+    {
+      "id": "bitcoinball-photo-frame",
+      "name": "BitcoinBall — Digital Photo Frame",
+      "category": "home-miner-appliance",
+      "summary": "Bitcoin miner built into a silent 7-10\" digital photo frame. Your memories on the wall, your miner inside.",
+      "specs": {
+        "hashrate_ths": { "min": 20, "max": 50 },
+        "power_w": { "min": 300, "max": 500 },
+        "noise_db": { "max": 25 },
+        "display": "7-10\" photo display + yield widget",
+        "model": "SOLO mining home lottery; new block ~every 10 minutes; block reward ~3.125 BTC plus fees; positive-sum (one-time cost + electricity, no repeated ticket purchases)",
+        "offline": "Appliance keeps working even offline"
+      },
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "bitcoinball-alarm-clock",
+      "name": "BitcoinBall — Smart Alarm Clock",
+      "category": "home-miner-appliance",
+      "summary": "Bitcoin miner in a silent ≤20 dB smart alarm clock. Wake up to the time — and last night's yield.",
+      "specs": {
+        "hashrate_ths": { "min": 10, "max": 30 },
+        "power_w": { "min": 200, "max": 350 },
+        "noise_db": { "max": 20 },
+        "display": "LCD time + yield, LED ring",
+        "model": "SOLO mining home lottery; positive-sum, one-time cost"
+      },
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "bitcoinball-speaker",
+      "name": "BitcoinBall — Smart Speaker",
+      "category": "home-miner-appliance",
+      "summary": "Bitcoin miner in a 5-10\" smart speaker with voice assistant. Music, voice — and a spoken word on every block. Available 2027 Q4.",
+      "specs": {
+        "hashrate_ths": { "min": 30, "max": 60 },
+        "power_w": { "min": 400, "max": 800 },
+        "noise_db": { "max": 30 },
+        "display": "5-10\" screen + voice assistant",
+        "availability": "Available 2027 Q4",
+        "model": "SOLO mining home lottery; positive-sum, one-time cost"
+      },
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "bitexchange-wallet",
+      "name": "BitExchange Hardware Wallet (2014)",
+      "category": "hardware-wallet",
+      "summary": "Early hardware wallet that laid the technical foundation and design philosophy for HardID. Historical product.",
+      "specs": {
+        "dimensions": "3.1cm x 2.1cm x 0.43cm",
+        "display": "Scratch-resistant sapphire crystal",
+        "input": "Capacitive touch screen",
+        "case": "High-precision CNC aluminum alloy",
+        "security": "PIN code + seed phrase (on-device signing, private key never touches the network)",
+        "customization": "Custom laser engraving on backside",
+        "license": "Fully open-source code"
+      },
+      "status": "historical — no longer manufactured; foundation for HardID",
+      "page": "https://lightningasic.com/bitexchange-wallet.html"
+    },
+    {
+      "id": "cryospring",
+      "name": "CryoSpring 冷泉 — Immersion Liquid Cooling",
+      "category": "mining-cooling",
+      "summary": "Phase-change immersion liquid cooling for Bitcoin mining ASICs. Fully submerges heat sources in coolant for ultimate thermal performance.",
+      "specs": {
+        "method": "Immersion phase-change cooling (heat sources fully submerged in coolant)",
+        "benefits": [
+          "Significantly reduced chip operating temperatures",
+          "Near-silent operation",
+          "Completely dust-free environment",
+          "Substantially extended equipment lifespan",
+          "Supports overclocking, reducing per-unit hashrate cost"
+        ],
+        "availability": "Enterprise engagement — project-based",
+        "demo_video": "https://www.youtube.com/watch?v=CYMpOEPk8-s (Lightningasic Immersion Liquid Cooling demo)"
+      },
+      "page": "https://lightningasic.com/cryospring.html"
+    }
+  ]
+}

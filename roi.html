@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Mining ROI Calculator — LIGHTNINGASIC</title>
+  <meta name="description" content="Estimate daily revenue, power cost, net income and break-even days for a SHA-256 miner based on hashrate, power, electricity price and BTC price. Honest expected-value math, live price option.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightningasic.com/roi.html">
+  <meta property="og:title" content="Bitcoin Mining ROI Calculator">
+  <meta property="og:description" content="Estimate daily revenue, power cost, net income and break-even for SHA-256 mining hardware.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lightningasic.com/roi.html">
+  <link rel="alternate" type="text/markdown" href="roi.md" title="ROI Calculator">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .roi-hero { padding: 7rem 1.5rem 2rem; text-align: center; max-width: 880px; margin: 0 auto; }
+    .roi-hero h1 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .roi-hero p { color: var(--text-secondary); max-width: 680px; margin: 0 auto; }
+    .roi-wrap { max-width: 880px; margin: 2rem auto 4rem; padding: 0 1.5rem; }
+    .roi-form { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; margin-bottom: 1.5rem; }
+    .field label { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.35rem; }
+    .field input { width: 100%; padding: 0.65rem 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text-primary); font-size: 1rem; }
+    .hint { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem; }
+    .roi-out { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; margin-top: 1.4rem; }
+    .metric { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.2rem; text-align: center; }
+    .metric .val { font-size: 1.45rem; font-weight: 700; }
+    .metric .lbl { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
+    .metric .val.pos { color: var(--accent); } .metric .val.neg { color: #ff6b6b; }
+    .note-box { margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); background: var(--bg); border: 1px dashed var(--border); border-radius: 10px; padding: 0.9rem 1.1rem; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ LIGHTNINGASIC</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hardid.html">HardID</a></li>
+        <li><a href="bitcoinball.html">BitcoinBall</a></li>
+        <li><a href="cryospring.html">CryoSpring</a></li>
+        <li><a href="ask.html">Ask</a></li>
+        <li><a href="roi.html" style="color: var(--accent);">ROI</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="roi-hero">
+    <h1>Bitcoin Mining ROI Calculator</h1>
+    <p>Expected-value math for SHA-256 mining: hashrate × network share × block reward minus electricity. Honest numbers only — no guaranteed-profit marketing.</p>
+  </section>
+
+  <div class="roi-wrap">
+    <div class="roi-form">
+      <button class="btn btn-secondary" id="live" onclick="loadLive()">Load live BTC price & network hashrate</button>
+      <div class="grid" style="margin-top:1.2rem;">
+        <div class="field"><label>Hashrate (TH/s)</label><input id="h" type="number" value="20" min="0" step="1"><div class="hint">BitcoinBall photo frame: 20–50 · clock: 10–30 · speaker: 30–60</div></div>
+        <div class="field"><label>Power (W)</label><input id="p" type="number" value="300" min="0" step="10"></div>
+        <div class="field"><label>Electricity ($/kWh)</label><input id="elec" type="number" value="0.12" min="0" step="0.01"></div>
+        <div class="field"><label>BTC price ($)</label><input id="btc" type="number" value="" min="0" step="100" placeholder="Load live or enter"></div>
+        <div class="field"><label>Network hashrate (EH/s)</label><input id="net" type="number" value="" min="0" step="10" placeholder="Load live or enter"></div>
+        <div class="field"><label>Block reward (BTC)</label><input id="rew" type="number" value="3.125" min="0" step="0.125"><div class="hint">Current era ≈3.125 (halving ~2028 halves it)</div></div>
+        <div class="field"><label>Blocks / day</label><input id="bpd" type="number" value="144" min="0" step="1"></div>
+        <div class="field"><label>Hardware price ($)</label><input id="price" type="number" value="0" min="0" step="50"><div class="hint">For break-even days. Contact sales for quotes.</div></div>
+      </div>
+      <button class="btn btn-primary" onclick="calc()">Calculate</button>
+      <div class="roi-out" id="out">
+        <div class="metric"><div class="val" id="m_rev">–</div><div class="lbl">Expected daily revenue</div></div>
+        <div class="metric"><div class="val" id="m_pow">–</div><div class="lbl">Daily power cost</div></div>
+        <div class="metric"><div class="val" id="m_net">–</div><div class="lbl">Daily net</div></div>
+        <div class="metric"><div class="val" id="m_roe">–</div><div class="lbl">Break-even days</div></div>
+      </div>
+      <div class="note-box" id="note">
+        For BitcoinBall (SOLO lottery) the expected revenue above is the long-run average;
+        a solo home miner usually earns nothing on a given day and rarely wins the whole
+        block (~3.125 BTC + fees). The product value is the appliance plus the lottery ticket —
+        treat revenue as indicative, not a promise.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">⚡ LIGHTNINGASIC</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="ask.html">Ask</a>
+        <a href="roi.html">ROI</a>
+        <a href="api/miners.json">catalog</a>
+        <a href="llms.txt">llms.txt</a>
+      </div>
+      <p class="footer-copy">© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.</p>
+    </div>
+  </footer>
+  <script src="js/roi.js?v=1"></script>
+</body>
+</html>

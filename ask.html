@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask LightningASIC — Natural Language Product Search</title>
+  <meta name="description" content="Ask LightningASIC any product question in natural language — find mining machines, wallets, cooling systems, availability and ROI by describing what you need.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightningasic.com/ask.html">
+  <meta property="og:title" content="Ask LightningASIC">
+  <meta property="og:description" content="Natural language search over the LIGHTNINGASIC product catalog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lightningasic.com/ask.html">
+  <link rel="alternate" type="text/markdown" href="ask.md" title="Ask LightningASIC">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ask-hero { padding: 8rem 1.5rem 3rem; text-align: center; max-width: 880px; margin: 0 auto; }
+    .ask-hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+    .ask-hero p { color: var(--text-secondary); max-width: 640px; margin: 0 auto 2rem; }
+    .ask-box { display: flex; gap: 0.75rem; max-width: 680px; margin: 0 auto; }
+    .ask-box input {
+      flex: 1; padding: 0.9rem 1.1rem; font-size: 1rem; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary);
+    }
+    .ask-examples { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .ask-examples button {
+      background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary);
+      padding: 0.4rem 0.9rem; border-radius: 999px; font-size: 0.85rem; cursor: pointer; transition: all .2s;
+    }
+    .ask-examples button:hover { color: var(--accent); border-color: var(--accent); }
+    .results { max-width: 880px; margin: 2.5rem auto 4rem; padding: 0 1.5rem; }
+    .result-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.6rem; margin-bottom: 1.25rem; }
+    .result-card h3 { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .result-card .tag { font-size: 0.75rem; background: rgba(0,150,255,.12); color: var(--accent); padding: .15rem .6rem; border-radius: 999px; }
+    .result-card table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+    .result-card td { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+    .result-card td:first-child { color: var(--text-secondary); width: 34%; }
+    .empty { text-align: center; color: var(--text-secondary); padding: 2rem; }
+    .note { font-size: 0.85rem; color: var(--text-secondary); text-align: center; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ LIGHTNINGASIC</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hardid.html">HardID</a></li>
+        <li><a href="bitcoinball.html">BitcoinBall</a></li>
+        <li><a href="cryospring.html">CryoSpring</a></li>
+        <li><a href="ask.html" style="color: var(--accent);">Ask</a></li>
+        <li><a href="roi.html">ROI</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="ask-hero">
+    <h1>Ask LightningASIC</h1>
+    <p>Describe what you need in plain language — silent home miner, hardware wallet, cooling for a farm, a miner under a power budget. Ask a natural-language question and search the live catalog:</p>
+    <div class="ask-box">
+      <input id="q" type="text" placeholder="e.g. silent SHA-256 miner under 400 W for home mining" autocomplete="off">
+      <button class="btn btn-primary" onclick="ask()">Ask</button>
+    </div>
+    <div class="ask-examples">
+      <button onclick="setQ('silent home miner under 400 W')">silent home miner under 400 W</button>
+      <button onclick="setQ('open source hardware wallet air gapped')">open-source air-gapped wallet</button>
+      <button onclick="setQ('30+ TH/s with voice assistant')">30+ TH/s with voice assistant</button>
+      <button onclick="setQ('cooling for asic miners overclock')">cooling for ASIC farm</button>
+      <button onclick="setQ('is the alarm clock in stock')">is the alarm clock in stock</button>
+    </div>
+    <p class="note">Data source: <a href="api/catalog.json">api/catalog.json</a> + <a href="api/stock.json">api/stock.json</a>. Agents: use /.well-known/agent-skills — this page is the human mirror of <code>search-miners</code>.</p>
+  </section>
+
+  <div class="results" id="results"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">⚡ LIGHTNINGASIC</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="ask.html">Ask</a>
+        <a href="roi.html">ROI</a>
+        <a href="llms.txt">llms.txt</a>
+        <a href="agents.txt">agents.txt</a>
+      </div>
+      <p class="footer-copy">© 2026 LIGHTNINGASIC. All rights reserved. Founded by JACK LIAO.</p>
+    </div>
+  </footer>
+  <script src="js/ask.js?v=1"></script>
+</body>
+</html>

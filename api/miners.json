@@ -1,0 +1,80 @@
+{
+  "$schema": "https://lightningasic.com/api/catalog.schema.json",
+  "updated": "2026-09-20",
+  "endpoint": "GET /api/miners.json?algorithm=SHA-256&min_hashrate=...&max_power=...",
+  "note": "Static catalog on GitHub Pages. Query parameters are advisory — the full catalog is always returned and the agent filters client-side. All data is real product information from lightningasic.com.",
+  "algorithm": "SHA-256 (Bitcoin and Bitcoin-derived networks)",
+  "units": {
+    "hashrate": "TH/s",
+    "power": "W",
+    "noise": "dB"
+  },
+  "products": [
+    {
+      "id": "bitcoinball-photo-frame",
+      "name": "BitcoinBall — Digital Photo Frame",
+      "model": "home-miner-appliance",
+      "category": "Bitcoin home mining appliance",
+      "algorithm": "SHA-256",
+      "hashrate_ths": { "min": 20, "max": 50 },
+      "power_w": { "min": 300, "max": 500 },
+      "noise_db": { "max": 25 },
+      "mode": "SOLO mining (home lottery, positive-sum)",
+      "efficiency_j_per_th": null,
+      "price": "Contact sales — lx@lightningasic.com",
+      "availability": "On request",
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "bitcoinball-alarm-clock",
+      "name": "BitcoinBall — Smart Alarm Clock",
+      "model": "home-miner-appliance",
+      "category": "Bitcoin home mining appliance",
+      "algorithm": "SHA-256",
+      "hashrate_ths": { "min": 10, "max": 30 },
+      "power_w": { "min": 200, "max": 350 },
+      "noise_db": { "max": 20 },
+      "mode": "SOLO mining (home lottery, positive-sum)",
+      "efficiency_j_per_th": null,
+      "price": "Contact sales — lx@lightningasic.com",
+      "availability": "On request",
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "bitcoinball-speaker",
+      "name": "BitcoinBall — Smart Speaker",
+      "model": "home-miner-appliance",
+      "category": "Bitcoin home mining appliance",
+      "algorithm": "SHA-256",
+      "hashrate_ths": { "min": 30, "max": 60 },
+      "power_w": { "min": 400, "max": 800 },
+      "noise_db": { "max": 30 },
+      "mode": "SOLO mining (home lottery, positive-sum)",
+      "efficiency_j_per_th": null,
+      "price": "Contact sales — lx@lightningasic.com",
+      "availability": "Available 2027 Q4 (pre-order)",
+      "page": "https://lightningasic.com/bitcoinball.html",
+      "site": "https://bitcoinball.top"
+    },
+    {
+      "id": "cryospring",
+      "name": "CryoSpring 冷泉 — Immersion Liquid Cooling",
+      "model": "cooling-technology",
+      "category": "Mining cooling technology",
+      "algorithm": "any (cools any ASIC miner)",
+      "application": "Immersion phase-change cooling for Bitcoin ASIC miners",
+      "benefits": [
+        "Significantly reduced chip operating temperatures",
+        "Near-silent operation",
+        "Completely dust-free environment",
+        "Substantially extended equipment lifespan",
+        "Supports overclocking, reducing per-unit hashrate cost"
+      ],
+      "price": "Enterprise engagement — project-based",
+      "availability": "On request (project-based)",
+      "page": "https://lightningasic.com/cryospring.html"
+    }
+  ]
+}

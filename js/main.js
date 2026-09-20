@@ -273,4 +273,91 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  registerWebMCP();
 });
+
+// ---- WebMCP: browser-native tools for AI agents (modelContext API) ----
+// Registered only when the browser exposes `document.modelContext`.
+// See https://lightningasic.com/agents.txt and /.well-known/agent-skills/
+async function registerWebMCP() {
+  if (!('modelContext' in document)) return;
+  const ctx = document.modelContext;
+  if (!ctx || typeof ctx.registerTool !== 'function') return;
+
+  const tools = [
+    {
+      name: 'search_miners',
+      description: 'Search LightningASIC mining hardware by algorithm, hashrate range, power range, or category',
+      parameters: {
+        algorithm: { type: 'string', enum: ['SHA-256', 'any'] },
+        min_hashrate: { type: 'number', description: 'minimum hashrate in TH/s' },
+        max_power: { type: 'number', description: 'maximum power in watts' },
+        category: { type: 'string', enum: ['home-miner-appliance', 'mining-cooling', 'hardware-wallet'] }
+      },
+      execute: async (args = {}) => {
+        const res = await fetch('/api/miners.json');
+        const data = await res.json();
+        return {
+          ...data,
+          products: data.products.filter(p => {
+            if (args.algorithm && args.algorithm !== 'any' && p.algorithm && p.algorithm !== args.algorithm) return false;
+            if (args.min_hashrate && p.hashrate_ths && p.hashrate_ths.max < args.min_hashrate) return false;
+            if (args.max_power && p.power_w && p.power_w.min > args.max_power) return false;
+            if (args.category && p.category !== args.category) return false;
+            return true;
+          })
+        };
+      }
+    },
+    {
+      name: 'check_availability',
+      description: 'Check availability and lead time for a LightningASIC product',
+      parameters: {
+        model: { type: 'string', enum: ['hardid', 'bitcoinball-photo-frame', 'bitcoinball-alarm-clock', 'bitcoinball-speaker', 'bitexchange-wallet', 'cryospring'] }
+      },
+      execute: async (args = {}) => {
+        const res = await fetch('/api/stock.json');
+        const data = await res.json();
+        const item = data.items.find(i => i.model_id === args.model);
+        return item || { status: 'unknown', fallback: data.fallback };
+      }
+    },
+    {
+      name: 'calculate_roi',
+      description: 'Estimate daily revenue, power cost, net income and break-even days for SHA-256 mining',
+      parameters: {
+        hashrate_ths: { type: 'number', description: 'hashrate in TH/s' },
+        power_w: { type: 'number', description: 'power draw in watts' },
+        electricity_per_kwh: { type: 'number', description: 'USD per kWh' },
+        btc_price_usd: { type: 'number' },
+        network_hashrate_ehs: { type: 'number', description: 'network hashrate in EH/s' },
+        block_reward_btc: { type: 'number' },
+        blocks_per_day: { type: 'number' },
+        hardware_price_usd: { type: 'number' }
+      },
+      execute: (args = {}) => {
+        const H = args.hashrate_ths || 0, P = args.power_w || 0,
+          elec = args.electricity_per_kwh || 0, btc = args.btc_price_usd || 0,
+          net = args.network_hashrate_ehs || 0, rew = args.block_reward_btc || 3.125,
+          bpd = args.blocks_per_day || 144, price = args.hardware_price_usd || 0;
+        if (!btc || !net) return { error: 'btc_price_usd and network_hashrate_ehs are required' };
+        const share = H / (net * 1e6);
+        const revenue = share * bpd * rew * btc;
+        const power = (P / 1000) * 24 * elec;
+        const netUsd = revenue - power;
+        return {
+          daily_revenue_usd: +revenue.toFixed(2),
+          daily_power_cost_usd: +power.toFixed(2),
+          daily_net_usd: +netUsd.toFixed(2),
+          break_even_days: price && netUsd > 0 ? Math.round(price / netUsd) : null,
+          note: 'Expected-value estimate for pool-style returns. Solo mining variance is extreme; not a promise.'
+        };
+      }
+    }
+  ];
+
+  for (const t of tools) {
+    try { await ctx.registerTool(t); } catch (e) { /* non-fatal */ }
+  }
+}

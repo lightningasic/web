@@ -1,25 +1,33 @@
 # LIGHTNINGASIC
 
-Founded in 2013 by JACK LIAO, specializing in AI and blockchain hardware innovation.
+> LIGHTNINGASIC is a Hong Kong-based Bitcoin and cryptocurrency mining hardware company founded in 2013 by JACK LIAO (also founder of Bitcoin Gold / BTG). Over a decade of hardware innovation: Bitcoin/Litecoin dual mining clusters, immersion liquid cooling, hardware wallets, home mining appliances, and AI edge computing devices.
+
+## Company
+- [Home](https://lightningasic.com/): Making AI & Blockchain accessible to everyone. About, history, products, contact.
+- [About & History](https://lightningasic.com/#about): World's first Bitcoin/Litecoin dual-algorithm mining cluster (2013), BitExchange ATM (2014), liquid cooling, HardID wallet, AI thin clients (2026).
 
 ## Products
 
-- HardID Hardware Wallet: Fully open-source, air-gapped hardware wallet with dual EAL6+ secure elements. Keys never leave the device. Clear Sign, FIDO2/U2F passkeys, reproducible builds.
-  Docs: https://lightningasic.com/hardid.html
+- [HardID Hardware Wallet](https://lightningasic.com/hardid.html): Fully open-source, air-gapped hardware wallet. Dual EAL6+ secure elements, keys never leave the device. Clear Sign, FIDO2/U2F passkeys, reproducible builds, 25-round security audit, Apache 2.0.
+- [BitcoinBall Home Lottery Machines](https://lightningasic.com/bitcoinball.html): Bitcoin miners built into everyday home appliances — digital photo frame (20–50 TH/s, 300–500 W, ≤25 dB), smart alarm clock (10–30 TH/s, 200–350 W, ≤20 dB), smart speaker (30–60 TH/s, 400–800 W, ≤30 dB, available 2027 Q4). SOLO mining, positive-sum home-lottery model.
+- [BitExchange Hardware Wallet (2014)](https://lightningasic.com/bitexchange-wallet.html): Early hardware wallet, technical foundation for HardID. Sapphire glass, touch screen, CNC aluminum, PIN + seed phrase.
+- [CryoSpring 冷泉 Immersion Liquid Cooling](https://lightningasic.com/cryospring.html): Phase-change immersion liquid cooling for Bitcoin mining ASICs. Lower chip temps, near-silent, dust-free, longer lifespan, overclock support.
 
-- BitcoinBall: Bitcoin miners built into everyday home appliances — digital photo frame, smart alarm clock, smart speaker. Positive-sum home-lottery model.
-  Docs: https://lightningasic.com/bitcoinball.html
+## Related
+- [Zenity](https://zenity.top): Smart luxury jewelry.
+- [IClawMini](https://iclawmini.com): AI edge computing device, 6 TOPS NPU, local 7B model.
 
-- BitExchange Hardware Wallet (2014): Ultra-slim Bitcoin hardware wallet, precursor to HardID.
-  Docs: https://lightningasic.com/bitexchange-wallet.html
+## AI-native endpoints (for agents)
+- [Agent skill registry](https://lightningasic.com/.well-known/agent-skills/index.json): machine-readable
+- [Agent capabilities](https://lightningasic.com/agents.txt): human-readable
+- [Full product catalog (JSON)](https://lightningasic.com/api/catalog.json)
+- [Mining hardware catalog (JSON)](https://lightningasic.com/api/miners.json)
+- [Stock & lead time (JSON)](https://lightningasic.com/api/stock.json)
+- [Bulk quote contract (JSON)](https://lightningasic.com/api/quotes.json)
+- [Ask LightningASIC](https://lightningasic.com/ask.html): natural-language search over the catalog
+- [ROI Calculator](https://lightningasic.com/roi.html): mining profitability calculator
+- [Full content for LLMs](https://lightningasic.com/llms-full.txt)
 
-- CryoSpring Immersion Liquid Cooling: Phase-change liquid cooling for Bitcoin mining ASICs.
-  Docs: https://lightningasic.com/cryospring.html
-
-- Zenity: Smart luxury jewelry. https://zenity.top
-
-- IClawMini: AI edge computing device. https://iclawmini.com
-
-## About
-
-LIGHTNINGASIC built the world's first Bitcoin/Litecoin dual mining machine cluster (2013-2014), pioneered immersion liquid cooling for ASIC miners, and continues developing blockchain and AI hardware solutions.
+## Contact
+- Email: lx@lightningasic.com
+- GitHub: https://github.com/lightningasic

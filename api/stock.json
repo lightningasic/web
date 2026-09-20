@@ -1,0 +1,66 @@
+{
+  "updated": "2026-09-20",
+  "endpoint": "GET /api/stock.json?model=<model_id>&qty=<quantity>",
+  "note": "Static availability snapshot. Live per-unit inventory is not published; all quantities are confirmed by email. Agent: treat values as indicative and always end with the fallback contact.",
+  "warehouse": "Hong Kong",
+  "items": [
+    {
+      "model_id": "hardid",
+      "model": "HardID Hardware Wallet",
+      "available_quantity": null,
+      "status": "available-to-order",
+      "lead_time": "Confirmed by email (typical: on request)",
+      "estimated_ship_date": null,
+      "notes": "Fully open-source hardware wallet. Orders via lx@lightningasic.com."
+    },
+    {
+      "model_id": "bitcoinball-photo-frame",
+      "model": "BitcoinBall — Digital Photo Frame",
+      "available_quantity": null,
+      "status": "on-request",
+      "lead_time": "Production run — confirmed by email",
+      "estimated_ship_date": null,
+      "notes": "20-50 TH/s, 300-500 W, <=25 dB."
+    },
+    {
+      "model_id": "bitcoinball-alarm-clock",
+      "model": "BitcoinBall — Smart Alarm Clock",
+      "available_quantity": null,
+      "status": "on-request",
+      "lead_time": "Production run — confirmed by email",
+      "estimated_ship_date": null,
+      "notes": "10-30 TH/s, 200-350 W, <=20 dB."
+    },
+    {
+      "model_id": "bitcoinball-speaker",
+      "model": "BitcoinBall — Smart Speaker",
+      "available_quantity": null,
+      "status": "pre-order",
+      "lead_time": "Available 2027 Q4",
+      "estimated_ship_date": "2027 Q4",
+      "notes": "30-60 TH/s, 400-800 W, <=30 dB. Pre-orders accepted."
+    },
+    {
+      "model_id": "bitexchange-wallet",
+      "model": "BitExchange Hardware Wallet (2014)",
+      "available_quantity": 0,
+      "status": "historical",
+      "lead_time": null,
+      "estimated_ship_date": null,
+      "notes": "No longer manufactured. Technical foundation for HardID."
+    },
+    {
+      "model_id": "cryospring",
+      "model": "CryoSpring 冷泉 — Immersion Liquid Cooling",
+      "available_quantity": null,
+      "status": "enterprise",
+      "lead_time": "Project-based engagement",
+      "estimated_ship_date": null,
+      "notes": "Immersion phase-change cooling for ASIC farms. Scoped per project."
+    }
+  ],
+  "fallback": {
+    "email": "lx@lightningasic.com",
+    "subject": "Stock inquiry"
+  }
+}

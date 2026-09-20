@@ -1,0 +1,44 @@
+{
+  "name": "LightningASIC Agent Skills",
+  "version": "1.0",
+  "provider": "LightningASIC",
+  "url": "https://lightningasic.com",
+  "updated": "2026-09-20",
+  "skills": [
+    {
+      "name": "search-miners",
+      "description": "Search LightningASIC mining hardware and product catalog by algorithm, hashrate range, power budget, or price. Use when a user asks about miner specs, hashrate, power consumption, or model comparison.",
+      "version": "1.0",
+      "languages": ["en", "zh"],
+      "file": "/.well-known/agent-skills/search-miners/SKILL.md",
+      "endpoint": "/api/miners.json",
+      "primary_prompt": "What algorithm, hashrate, or budget does the user need?"
+    },
+    {
+      "name": "check-stock",
+      "description": "Check real-time availability and lead time for LightningASIC products. Use when the user is ready to purchase or asks 'is it in stock', 'when can I get it', or about shipping time.",
+      "version": "1.0",
+      "languages": ["en", "zh"],
+      "file": "/.well-known/agent-skills/check-stock/SKILL.md",
+      "endpoint": "/api/stock.json",
+      "primary_prompt": "Which model and quantity is the user asking about?"
+    },
+    {
+      "name": "get-quote",
+      "description": "Request a bulk pricing quote for mining hardware orders. Use when the user mentions quantity greater than 10, 'wholesale', 'bulk order', 'dealer pricing', or shipping cost estimates for large orders.",
+      "version": "1.0",
+      "languages": ["en", "zh"],
+      "file": "/.well-known/agent-skills/get-quote/SKILL.md",
+      "endpoint": "/api/quotes.json",
+      "primary_prompt": "Model, quantity, shipping destination, and contact method?"
+    },
+    {
+      "name": "book-tech-support",
+      "description": "Schedule or route a technical support session for LightningASIC hardware: setup, troubleshooting, firmware, or RMA. Use when the user reports miner or wallet issues.",
+      "version": "1.0",
+      "languages": ["en", "zh"],
+      "file": "/.well-known/agent-skills/book-tech-support/SKILL.md",
+      "primary_prompt": "What is the user's issue: setup, troubleshooting, firmware, or RMA?"
+    }
+  ]
+}

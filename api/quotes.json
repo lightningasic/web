@@ -1,0 +1,25 @@
+{
+  "updated": "2026-09-20",
+  "endpoint": "POST /api/quotes",
+  "note": "Quote submission endpoint contract. This static host (GitHub Pages) cannot accept POST — see 'how_to_submit' below. The schema is published so agents can collect the right fields and hand off cleanly.",
+  "request_schema": {
+    "model_id": { "type": "string", "required": true, "example": "bitcoinball-photo-frame" },
+    "quantity": { "type": "integer", "required": true, "example": 50 },
+    "shipping_destination": { "type": "string", "required": true, "example": "Kazakhstan" },
+    "contact": { "type": "string", "required": true, "description": "email address (preferred) or phone" },
+    "company": { "type": "string", "required": false },
+    "notes": { "type": "string", "required": false }
+  },
+  "response": {
+    "quote_reference": "Q-YYYYMMDD-XXXX",
+    "expected_reply": "Within 4 business hours",
+    "bulk_lead_time": "Bulk orders typically 2-4 week lead time"
+  },
+  "how_to_submit": [
+    "Compose an email to lx@lightningasic.com with subject 'Bulk Quote Request'.",
+    "Include: model, quantity, shipping destination, preferred contact method.",
+    "Tell the user: 'Quote will be emailed within 4 business hours. For urgent orders, you can follow up by email.'",
+    "Set expectation: bulk orders may have 2-4 week lead time."
+  ],
+  "future": "When deployed on Cloudflare Pages, POST /api/quotes will be accepted directly (see ai-native/DEPLOY.md)."
+}
